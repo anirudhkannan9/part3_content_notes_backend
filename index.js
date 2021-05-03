@@ -14,6 +14,9 @@ const app = express()
 //app use express json-parser to access JSON data sent to our endpoints
 app.use(express.json())
 
+//Whenever express gets a GET request it first checks in the build folder for a file corresponding to the address, and returns it
+app.use(express.static('build'))
+
 const cors = require('cors')
 app.use(cors())
 
